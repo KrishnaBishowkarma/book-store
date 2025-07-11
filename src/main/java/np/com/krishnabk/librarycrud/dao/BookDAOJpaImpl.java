@@ -24,7 +24,7 @@ public class BookDAOJpaImpl implements BookDAO {
     public List<Book> findAll() {
 
         // create query
-        TypedQuery<Book> theQuery = entityManager.createQuery("select Book", Book.class);
+        TypedQuery<Book> theQuery = entityManager.createQuery("from Book", Book.class);
 
         // execute query and get result list
         List<Book> bookList = theQuery.getResultList();
