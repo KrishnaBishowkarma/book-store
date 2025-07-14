@@ -32,4 +32,24 @@ public class BookDAOJpaImpl implements BookDAO {
         // return the results
         return bookList;
     }
+
+    @Override
+    public Book findById(int theId) {
+
+        // get book
+        Book theBook = entityManager.find(Book.class, theId);
+
+        // return use with id
+        return theBook;
+    }
+
+    @Override
+    public Book save(Book theBook) {
+        return null;
+    }
+
+    @Override
+    public void deleteById(int theId) {
+
+    }
 }
