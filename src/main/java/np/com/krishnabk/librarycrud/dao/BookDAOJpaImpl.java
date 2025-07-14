@@ -45,7 +45,12 @@ public class BookDAOJpaImpl implements BookDAO {
 
     @Override
     public Book save(Book theBook) {
-        return null;
+
+        // save book
+        Book dbBook = entityManager.merge(theBook);
+
+        // return book
+        return dbBook;
     }
 
     @Override
