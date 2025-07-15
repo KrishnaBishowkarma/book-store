@@ -15,11 +15,10 @@ public class BookRestController {
     private final BookService bookService;
     private BookDAO bookDAO;
 
-    // quick and dirty: inject book dao to use constructor injection (will add service layer later)
     @Autowired
-    public BookRestController(BookDAO theBookDAO, BookService bookService){
+    public BookRestController(BookDAO theBookDAO, BookService theBookService){
         bookDAO = theBookDAO;
-        this.bookService = bookService;
+        bookService = theBookService;
     }
 
     // expose "/books" and return a list books
@@ -52,5 +51,20 @@ public class BookRestController {
         Book dbBook = bookService.save(theBook);
 
         return dbBook;
+    }
+
+    // add mapping for DELETE /books/{bookId} - delete book by id
+    @DeleteMapping("/books/{bookId}")
+    public String deleteBook (@PathVariable int bookId){
+
+        Book theBook = bookService.findById(bookId);
+
+        if (theBook == null) {
+            throw new RuntimeException("Book id not found - " + bookId);
+        }
+
+        bookService.deleteById(bookId);
+
+        return "Deleted book id - " + bookId;
     }
 }
