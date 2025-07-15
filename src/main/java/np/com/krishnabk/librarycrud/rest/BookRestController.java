@@ -34,7 +34,7 @@ public class BookRestController {
         Book theBook = bookService.findById(bookId);
 
         if (theBook == null){
-            throw new RuntimeException("Book id not found - " + bookId);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Book id not found - " + bookId);
         }
 
         return theBook;
