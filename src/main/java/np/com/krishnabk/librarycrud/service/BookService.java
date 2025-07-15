@@ -1,10 +1,11 @@
-package np.com.krishnabk.librarycrud.dao;
+package np.com.krishnabk.librarycrud.service;
 
 import np.com.krishnabk.librarycrud.entity.Book;
 
 import java.util.List;
 
-public interface BookDAO {
+public interface BookService {
+
     List<Book> findAll();
 
     Book findById(int theId);
