@@ -24,7 +24,7 @@ public class BookRestController {
     // expose "/books" and return a list books
     @GetMapping("/books")
     public List<Book> findAll(){
-        return bookDAO.findAll();
+        return bookService.findAll();
     }
 
     // expose /books/{bookId} - return a book by id
