@@ -1,40 +1,50 @@
 package np.com.krishnabk.librarycrud.service;
 
-import np.com.krishnabk.librarycrud.dao.BookDAO;
+import np.com.krishnabk.librarycrud.dao.BookRepository;
 import np.com.krishnabk.librarycrud.entity.Book;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookServiceImpl implements BookService{
 
-    private BookDAO bookDAO;
+    private BookRepository bookRepository;
 
-    public BookServiceImpl(BookDAO theBookDAO){
-        bookDAO = theBookDAO;
+    public BookServiceImpl(BookRepository theBookRepository){
+        bookRepository = theBookRepository;
     }
 
     @Override
     public List<Book> findAll() {
-        return bookDAO.findAll();
+        return bookRepository.findAll();
     }
 
     @Override
     public Book findById(int theId) {
-        return bookDAO.findById(theId);
+        Optional<Book> result = bookRepository.findById(theId);
+
+        Book theBook = null;
+
+        if (result.isPresent()) {
+            theBook = result.get();
+        } else {
+            // we didn't find the book
+            throw new RuntimeException("Did not find book id - " + theId);
+        }
+
+        return theBook;
     }
 
-    @Transactional
     @Override
     public Book save(Book theBook) {
-        return bookDAO.save(theBook);
+        return bookRepository.save(theBook);
     }
 
-    @Transactional
     @Override
     public void deleteById(int theId) {
-        bookDAO.deleteById(theId);
+        bookRepository.deleteById(theId);
     }
 }

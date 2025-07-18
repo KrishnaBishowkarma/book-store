@@ -1,6 +1,5 @@
 package np.com.krishnabk.librarycrud.rest;
 
-import np.com.krishnabk.librarycrud.dao.BookDAO;
 import np.com.krishnabk.librarycrud.entity.Book;
 import np.com.krishnabk.librarycrud.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +14,9 @@ import java.util.List;
 public class BookRestController {
 
     private final BookService bookService;
-    private BookDAO bookDAO;
 
     @Autowired
-    public BookRestController(BookDAO theBookDAO, BookService theBookService){
-        bookDAO = theBookDAO;
+    public BookRestController(BookService theBookService){
         bookService = theBookService;
     }
 
@@ -49,6 +46,15 @@ public class BookRestController {
         // this is to force a save of new item ... instead of update
 
         theBook.setId(0);
+
+        Book dbBook = bookService.save(theBook);
+
+        return dbBook;
+    }
+
+    // add mapping for PUT /books - update existing book
+    @PutMapping("/books")
+    public Book updateBook(@RequestBody Book theBook) {
 
         Book dbBook = bookService.save(theBook);
 
