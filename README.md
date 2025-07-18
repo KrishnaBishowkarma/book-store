@@ -67,7 +67,7 @@ A robust CRUD application built with Java, Spring Boot, and MySQL for efficient 
    mvn spring-boot:run
    ```
 
-7. **Explore the API**
+6. **Explore the API**
 
    Access the REST APIs via Postman or any REST client. The app will be available at: `http://localhost:8080`
    
@@ -82,6 +82,32 @@ A robust CRUD application built with Java, Spring Boot, and MySQL for efficient 
    | POST   | /api/books      | Add a new book          |
    | PUT    | /api/books      | Update an existing book |
    | DELETE | /api/books/{id} | Delete a book by ID     |
+
+
+## 🧪 API Testing
+
+To quickly test the API endpoints, use the provided Postman collection:
+
+📁 [Bookstore API Postman Collection](./src/main/resources/BookStore.postman_collection.json)
+
+### Steps:
+
+1. Open Postman.
+2. Click on **"Import"** → **"Upload Files"**.
+3. Select the `BookStore.postman_collection.json` file located at:
+
+```
+src/main/resources/BookStore.postman_collection.json
+```
+
+4. Once imported, you can test all the endpoints:
+- `GET /api/books`
+- `GET /api/books/{id}`
+- `POST /api/books`
+- `PUT /api/books`
+- `DELETE /api/books/{id}`
+
+> Make sure the application is running at `http://localhost:8080` before sending any requests.
 
 ---
 ## 📄 License
