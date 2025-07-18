@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "b37b70b3-0891-4703-ac51-0de9a69c079a",
+		"name": "BookStore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39424064"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/v1/books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"firstName\": \"Krishna\",\r\n    \"lastName\": \"Bishowkarma\",\r\n    \"email\": \"krishna@luv2code.com\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/books/2",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/books",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bookTitle\": \"Bhagwat Gita\",\r\n    \"authorName\": \"Universe\",\r\n    \"publishDate\": \"2021-01-12T00:00:00\",\r\n    \"isbn\": \"978-93-23-43-2423\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/books",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n        \"id\": 5,\r\n        \"bookTitle\": \"Immature\",\r\n        \"authorName\": \"Krishna\",\r\n        \"publishDate\": \"2021-01-12T00:00:00\",\r\n        \"isbn\": \"230-234-1023-432\"\r\n   }\r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/books/6",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n        \"id\": 5,\r\n        \"bookTitle\": \"Immature\",\r\n        \"authorName\": \"Krishna\",\r\n        \"publishDate\": \"2021-01-12T00:00:00\",\r\n        \"isbn\": \"230-234-1023-432\"\r\n   }\r\n    "
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/books/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
