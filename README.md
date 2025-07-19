@@ -120,7 +120,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## 👨‍💻 Author
 **Krishna B. K (Bishowkarma)**  
-[🌐 Portfolio](https://krishnabk.com.np) | [💼 LinkedIn](https://linkedin.com/in/KrishnaBishowkarma) | [🐙 GitHub](https://github.com/KrishnaBishowkarma)
+[🌐 Portfolio](https://krishna-bk.com.np) | [💼 LinkedIn](https://linkedin.com/in/KrishnaBishowkarma) | [🐙 GitHub](https://github.com/KrishnaBishowkarma)
 
 ---
 
